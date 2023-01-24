@@ -1,0 +1,146 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	width: 100vw;
+	min-height: 100vh;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 12px;
+}
+.flex-start{
+	display: flex;
+	justify-content: flex-start;
+	
+}
+.flex-center{
+	display: flex;
+	justify-content: center;
+}
+.dark{
+	background: #333;
+	color: #fff;
+}
+body{
+	flex-direction: column;
+	padding-bottom: 60px;
+}
+.head{
+	background-color: antiquewhite;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	color: rgb(0, 0, 0);
+}
+.head__btn{
+	font-size: 1rem;
+	font-weight: bold;
+	background-color: rgb(82, 250, 186);
+	text-decoration: none;
+  color: #363636;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+	margin-right: 20px;
+}
+.navbar{
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: 80;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1rem 0.5rem 0.5rem;
+}
+.navbar__title{
+	width: 100%;
+	font-size: 1.5rem;
+}
+.navbar__navmenu{
+width: 100%;
+}
+.navbar__list{
+	text-align: right;
+	display: block;
+}
+.navbar__list-item{
+	display: inline-block;
+	margin: 0.5rem;
+}
+.navbar__list-item:last-child{
+	margin-right: 0;
+}
+.navbar__list-link{
+	color: #fff;
+}
+.main{
+	flex-wrap: wrap;
+	max-width: 1700px;
+	margin: auto;
+}
+.post{
+	background-color: antiquewhite;
+	width: 250px;
+	border: 1px solid #000;
+	border-radius: 25px;
+	padding: 1rem;
+	margin: 1rem;
+	box-shadow: 4px 4px 0 #333;
+}
+.post__data{
+	width: 220px;
+	margin: 1rem;
+	font-size: 10px;
+}
+.post__data_strong{
+	width: 220px;
+	margin: 1rem;
+	font-size: 15px;
+	font-weight: bold;
+}
+.post__img{
+	display: block;
+	margin: 1rem auto;
+	width: 100%;
+	
+}
+.post__btn{
+	display: block;
+	text-align: right;
+	width: 100%;
+}
+.button {
+  background-color: rgb(126, 185, 253);
+ text-decoration: none;
+  color: #363636;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+	margin-left: 5px;
+}
+.button__danger {
+  background-color: rgb(253, 88, 137);
+  border: unset;
+  color: #363636;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+	margin-left: 5px;
+}
+ 

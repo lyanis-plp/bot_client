@@ -22,46 +22,55 @@ const FrazeList = ()=>{
     };
 
     return(
-
-
-<div className="columns mt-5 is-centered">
-    <div className="column is-half">
-        <Link to={`add`} className="button is-success">
-            Add New
-        </Link>
-               <table className="table is-striped is-fullwidth">
-                   <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>login</th>
-                            <th>ingfraze</th>
-														<th>ingtext</th>
-														<th>rutext</th>
-														<th>theame</th>
-                            <th>Action</th>
-                        </tr>
-                   </thead>
-                   <tbody>
-                   {frazes.map((fraze, index) =>(
-                       <tr key={fraze.id}>
-                           <th>{index+1}</th>
-                           <th>{fraze.login}</th>
-													 <th>{fraze.ingfraze}</th>
-                           <th>{fraze.ingtext}</th>
-                           <th>{fraze.rutext}</th>
-													 <th>{fraze.theame}</th>
-                           <th>
-                               <Link to={`edit/${fraze.id}`} className="button is-small is-info">Edit</Link>
-                               <button onClick={()=>deleteFraze(fraze.id)} className="button is-small is-danger">Delite</button>
-                           </th>
-                       </tr>
-
-                   ))}
-
-                   </tbody>
-               </table>
-    </div>
-</div>
-    )
+			<div>
+				 <div className="head"> 
+					<Link to={`add`} className="head__btn">Add New</Link>
+					<h2>Inglich audio text data</h2>
+				</div>
+			<div className="main flex-center">
+					 
+							 
+										 
+												 {frazes.map((fraze, index) =>(
+			
+													<div className="post" key={fraze.id}>
+													
+														 
+																 <h3>#{index+1} - {fraze.login}</h3>
+																 <img src="./rigel.png" className="post__img" alt="rigel"/>
+																 <p className="post__data">{fraze.ingtext}</p>
+																 <p className="post__data">{fraze.rutext}</p>
+																 <p className="post__data">Возможно аудио</p>
+																 <p className="post__data">{fraze.theame}</p>
+																 <div className="post__btn">
+																		 <Link to={`edit/${fraze.id}`} className="button">Edit</Link>
+																		 <button onClick={()=>deleteFraze(fraze.id)} className="button__danger">Delite</button>
+																 </div>
+														 
+													</div>
+												 ))}
+			
+												 
+					 
+			</div>
+			</div>
+					)
 }
 export default FrazeList;
+
+
+// {frazes.map((fraze, index) =>(
+// 	<tr key={fraze.id}>
+// 			<th>{index+1}</th>
+// 			<th>{fraze.login}</th>
+// 			<th>{fraze.ingfraze}</th>
+// 			<th>{fraze.ingtext}</th>
+// 			<th>{fraze.rutext}</th>
+// 			<th>{fraze.theame}</th>
+// 			<th>
+// 					<Link to={`edit/${fraze.id}`} className="button is-small is-info">Edit</Link>
+// 					<button onClick={()=>deleteFraze(fraze.id)} className="button is-small is-danger">Delite</button>
+// 			</th>
+// 	</tr>
+
+// ))}

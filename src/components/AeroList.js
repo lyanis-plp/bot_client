@@ -22,46 +22,41 @@ const AeroList = ()=>{
     };
 
     return(
-
-
-<div className="columns mt-5 is-centered">
-    <div className="column is-full">
-        <Link to={`add`} className="button is-success">
-            Add New
-        </Link>
-               <table className="table is-striped is-fullwidth">
-                   <thead>
-                        <tr>
-                            <th>No</th>
-														<th>level</th>
-                            <th>themData</th> 
-                            <th>imgData</th>
-                            <th>audioData</th>
-														<th>videoData</th>
-														<th>Action</th>
-                        </tr>
-                   </thead>
-                   <tbody>
-                   {aeros.map((aero, index) =>(
-                       <tr key={aero.id}>
-                           <th>{index+1}</th>
-                           <th>{aero.level}</th>
-													 <th>{aero.themData}</th>
-                           <th>{aero.imgData}</th>
-                           <th>{aero.audioData}</th>
-													 <th>{aero.videoData}</th>
-													 <th>
-                               <Link to={`edit/${aero.id}`} className="button is-small is-info">Edit</Link>
-                               <button onClick={()=>deleteAero(aero.id)} className="button is-small is-danger">Delite</button>
-                           </th>
-                       </tr>
-
-                   ))}
-
-                   </tbody>
-               </table>
-    </div>
-</div>
-    )
+			<div>
+				 <div className="head"> 
+					<Link to={`add`} className="head__btn">Add New</Link>
+					<h2>Aerodinamic data</h2>
+				</div>
+			<div className="main flex-center">
+					 
+							 
+										 
+												 {aeros.map((aero, index) =>(
+			
+													<div className="post" key={aero.id}>
+													
+														 
+																<h3>#{index+1} {aero.level}</h3>
+																<img src="./rigel.png" className="post__img" alt="rigel"/>
+																<p className="post__data">{aero.themData}</p>
+																<p className="post__data">Возможно фото</p>
+                          			<p className="post__data">Возможно аудио</p>
+																 <div className="post__btn">
+																		 <Link to={`edit/${aero.id}`} className="button">Edit</Link>
+																		 <button onClick={()=>deleteAero(aero.id)} className="button__danger">Delite</button>
+																 </div>
+														 
+													</div>
+												 ))}
+			
+												 
+					 
+			</div>
+			</div>
+					)
 }
 export default AeroList;
+
+
+
+

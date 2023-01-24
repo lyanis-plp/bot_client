@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
+//import styes from "./styleComponent.module.css";
 
 
 const SimList = ()=>{
@@ -22,45 +23,37 @@ const SimList = ()=>{
     };
 
     return(
-
-
-<div className="columns mt-5 is-centered">
-    <div className="column is-full">
-        <Link to={`add`} className="button is-success">
-            Add New
-        </Link>
-               <table className="table is-striped is-fullwidth">
-                   <thead>
-                        <tr>
-                            <th>No</th>
-														<th>level</th>
-                            <th>themData</th> 
-                            <th>imgData</th>
-                            <th>audioData</th>
-														<th>videoData</th>
-														<th>Action</th>
-                        </tr>
-                   </thead>
-                   <tbody>
+<div>
+ 	<div className="head"> 
+		<Link to={`add`} className="head__btn">Add New</Link>
+		<h2>Avia simulation data</h2>
+	</div>
+<div className="main flex-center">
+     
+         
+               
                    {sims.map((sim, index) =>(
-                       <tr key={sim.id}>
-                           <th>{index+1}</th>
-                           <th>{sim.level}</th>
-													 <th>{sim.themData}</th>
-                           <th>{sim.imgData}</th>
-                           <th>{sim.audioData}</th>
-													 <th>{sim.videoData}</th>
-													 <th>
-                               <Link to={`edit/${sim.id}`} className="button is-small is-info">Edit</Link>
-                               <button onClick={()=>deleteSim(sim.id)} className="button is-small is-danger">Delite</button>
-                           </th>
-                       </tr>
 
+										<div className="post" key={sim.id}>
+										
+                       
+                           <h3>#{index+1} {sim.level}</h3>
+                           <img src="./rigel.png" className="post__img" alt="rigel"/>
+													 <p className="post__data">{sim.themData}</p>
+													 <p className="post__data">Возможно фото</p>
+                           <p className="post__data">Возможно аудио</p>
+													 <p className="post__data">Возможно видео</p>
+													 <div className="post__btn">
+                               <Link to={`edit/${sim.id}`} className="button">Edit</Link>
+                               <button onClick={()=>deleteSim(sim.id)} className="button__danger">Delite</button>
+                           </div>
+                       
+										</div>
                    ))}
 
-                   </tbody>
-               </table>
-    </div>
+                   
+     
+</div>
 </div>
     )
 }

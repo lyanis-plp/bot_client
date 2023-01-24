@@ -22,46 +22,57 @@ const UserList = ()=>{
     };
 
     return(
-
-
-<div className="columns mt-5 is-centered">
-    <div className="column is-half">
-        <Link to={`add`} className="button is-success">
-            Add New
-        </Link>
-               <table className="table is-striped is-fullwidth">
-                   <thead>
-                        <tr>
-                            <th>No</th>
-														<th>uuid</th>
-                            <th>firstName</th> 
-                            <th>lastName</th>
-                            <th>user_name</th>
-														<th>test_ind</th>
-                            <th>Action</th>
-                        </tr>
-                   </thead>
-                   <tbody>
-                   {users.map((user, index) =>(
-                       <tr key={user.id}>
-                           <th>{index+1}</th>
-                           <th>{user.uuid}</th>
-													 <th>{user.firstName}</th>
-                           <th>{user.lastName}</th>
-                           <th>{user.user_name}</th>
-													 <th>{user.test_ind}</th>
-                           <th>
-                               <Link to={`edit/${user.id}`} className="button is-small is-info">Edit</Link>
-                               <button onClick={()=>deleteUser(user.id)} className="button is-small is-danger">Delite</button>
-                           </th>
-                       </tr>
-
-                   ))}
-
-                   </tbody>
-               </table>
-    </div>
-</div>
-    )
+			<div>
+				 <div className="head"> 
+					<Link to={`add`} className="head__btn">Add New</Link>
+					<h2>Users data</h2>
+				</div>
+			<div className="main flex-center">
+					 
+							 
+										 
+												 {users.map((user, index) =>(
+			
+													<div className="post" key={user.id}>
+													
+														 
+																 <h3>#{index+1} - {user.uuid}</h3>
+																 <img src="./rigel.png" className="post__img" alt="rigel"/>
+																 <p className="post__data">{user.firstName}</p>
+																 <p className="post__data">{user.lastName}</p>
+																 <p className="post__data">{user.user_name}</p>
+																 <p className="post__data">{user.test_ind}</p>
+																 <div className="post__btn">
+																		 
+																		 <button onClick={()=>deleteUser(user.id)} className="button__danger">Delite</button>
+																 </div>
+														 
+													</div>
+												 ))}
+			
+												 
+					 
+			</div>
+			</div>
+					)
 }
 export default UserList;
+
+
+
+
+// {users.map((user, index) =>(
+// 	<tr key={user.id}>
+// 			<th>{index+1}</th>
+// 			<th>{user.uuid}</th>
+// 			<th>{user.firstName}</th>
+// 			<th>{user.lastName}</th>
+// 			<th>{user.user_name}</th>
+// 			<th>{user.test_ind}</th>
+// 			<th>
+// 					<Link to={`edit/${user.id}`} className="button is-small is-info">Edit</Link>
+// 					<button onClick={()=>deleteUser(user.id)} className="button is-small is-danger">Delite</button>
+// 			</th>
+// 	</tr>
+
+// ))}

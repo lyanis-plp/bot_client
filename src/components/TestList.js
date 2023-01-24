@@ -22,52 +22,63 @@ const TestList = ()=>{
     };
 
     return(
-
-
-<div className="columns mt-5 is-centered">
-    <div className="column is-half">
-        <Link to={`add`} className="button is-success">
-            Add New
-        </Link>
-               <table className="table is-striped is-fullwidth">
-                   <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Theme</th>
-                            <th>question</th>
-                            <th>conwa text</th>
-														<th>unswer1</th>
-														<th>unswer2</th>
-														<th>unswer3</th>
-														<th>unswer4</th>
-														<th>them</th>
-                            <th>Action</th>
-                        </tr>
-                   </thead>
-                   <tbody>
-                   {tests.map((test, index) =>(
-                       <tr key={test.id}>
-                           <th>{index+1}</th>
-                           <th>{test.login}</th>
-													 <th>{test.quest}</th>
-                           <th>{test.conwa}</th>
-                           <th>{test.unswer1}</th>
-													 <th>{test.unswer2}</th>
-													 <th>{test.unswer3}</th>
-													 <th>{test.unswer4}</th>
-													 <th>{test.them}</th>
-                           <th>
-                               <Link to={`edit/${test.id}`} className="button is-small is-info">Edit</Link>
-                               <button onClick={()=>deleteTest(test.id)} className="button is-small is-danger">Delite</button>
-                           </th>
-                       </tr>
-
-                   ))}
-
-                   </tbody>
-               </table>
-    </div>
-</div>
-    )
+			<div>
+				 <div className="head"> 
+					<Link to={`add`} className="head__btn">Add New</Link>
+					<h2>Inglish tests data</h2>
+				</div>
+			<div className="main flex-center">
+					 
+							 
+										 
+												 {tests.map((test, index) =>(
+			
+													<div className="post" key={test.id}>
+													
+														 
+																 <h3>#{index+1} - {test.login}</h3>
+																 <img src="./rigel.png" className="post__img" alt="rigel"/>
+																 <p className="post__data">{test.quest}</p>
+																 <p className="post__data">{test.conwa}</p>
+																 <hr/>
+																 <p className="post__data">1. {test.unswer1}</p>
+																 <p className="post__data">2. {test.unswer2}</p>
+																 <p className="post__data">3. {test.unswer3}</p>
+																 <p className="post__data">4. {test.unswer4}</p>
+																 <hr/>
+																 <p className="post__data">правельный ответ <strong className="post__data_strong">{test.them}</strong></p>
+																 <div className="post__btn">
+																		 <Link to={`edit/${test.id}`} className="button">Edit</Link>
+																		 <button onClick={()=>deleteTest(test.id)} className="button__danger">Delite</button>
+																 </div>
+														 
+													</div>
+												 ))}
+			
+												 
+					 
+			</div>
+			</div>
+					)
 }
 export default TestList;
+
+
+// {tests.map((test, index) =>(
+// 	<tr key={test.id}>
+// 			<th>{index+1}</th>
+// 			<th>{test.login}</th>
+// 			<th>{test.quest}</th>
+// 			<th>{test.conwa}</th>
+// 			<th>{test.unswer1}</th>
+// 			<th>{test.unswer2}</th>
+// 			<th>{test.unswer3}</th>
+// 			<th>{test.unswer4}</th>
+// 			<th>{test.them}</th>
+// 			<th>
+// 					<Link to={`edit/${test.id}`} className="button is-small is-info">Edit</Link>
+// 					<button onClick={()=>deleteTest(test.id)} className="button is-small is-danger">Delite</button>
+// 			</th>
+// 	</tr>
+
+// ))}
