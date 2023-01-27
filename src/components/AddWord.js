@@ -23,12 +23,75 @@ const AddWord = ()=>{
     }
 
     return(
-        <div className="columns mt-5 is-centered">
-            <div className="column is-half">
-                <Link to={`/`} className="button is-success">
-                    Home
-                </Link>
-                <form onSubmit={seveWord}>
+        
+<div> 
+		<div className="head"> 
+					<Link to={`/words`} className="head__btn">Words</Link>
+					<h2>Add words</h2>
+		</div>
+
+			<div className="main flex-center">
+			<div className="post__form"> 
+			<h3>Adding words</h3>
+																 <img src="../rigel.png" className="post__img" alt="rigel"/>
+			<form onSubmit={seveWord}>
+                    <div className="field">
+                        <label className="post__label">К какой теме относится:</label>
+                        <div className="post__control">
+                            <input type="text"
+                                   className="input"
+                                   value={login}
+                                   onChange={(e)=>setLogin(e.target.value)}
+                                   placeholder="тема"/>
+                        </div>
+                    </div>
+                    <div className="field">
+                        <label className="post__label">Текст на английском:</label>
+                        <div className="post__control">
+                            <input type="text"
+                                   className="input"
+                                   value={ingtext}
+                                   onChange={(e)=>setIngtext(e.target.value)}
+                                   placeholder="Текст"/>
+                        </div>
+                    </div>
+                    <div className="field">
+                        <label className="post__label">Текст на русском:</label>
+                        <div className="post__control">
+                             
+														 <input type="text"
+                                  className="input"
+                                  value={rutext}
+                                  onChange={(e)=>setRutext(e.target.value)}
+																	placeholder="Текст"/>
+                                     
+                                 
+                             
+                        </div>
+                    </div>
+                    <div className="field">
+                        <button type="submit" className="button">Сохранить</button>
+                    </div>
+                </form>
+								</div>
+
+
+			</div>
+
+</div>
+
+
+
+
+
+
+    )
+}
+export default AddWord;
+
+
+
+{/* <form onSubmit={seveWord}>
                     <div className="field">
                         <label className="label">Theam:</label>
                         <div className="control">
@@ -66,13 +129,7 @@ const AddWord = ()=>{
                     <div className="field">
                         <button type="submit" className="button is-success">Save</button>
                     </div>
-                </form>
-
-            </div>
-        </div>
-    )
-}
-export default AddWord;
+                </form> */}
 
 
 

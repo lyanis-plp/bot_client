@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
+import MainList from "./components/MainList";
 import UserList from "./components/UserList";
 import AddUser from "./components/AddUser";
 import EditUser from "./components/EditUser";
@@ -23,6 +24,8 @@ function App() {
   return (
     <BrowserRouter>
         <Routes>
+				    <Route path="/" element={<MainList/>}/>
+
             <Route path="/users" element={<UserList/>}/>
 						<Route path="/users/add" element={<AddUser/>}/>
             <Route path="users/edit/:id" element={<EditUser/>}/>
